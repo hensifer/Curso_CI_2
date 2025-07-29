@@ -21,6 +21,11 @@ jobs:
       with:
         go-version: ${{ matrix.go_version }}
       
+    - name: Install Docker Compose
+      run: |
+        sudo apt-get update
+        sudo apt-get install docker-compose -y
+
     - name: Build-DB
       run: docker-compose build
       
