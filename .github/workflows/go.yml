@@ -42,8 +42,7 @@ jobs:
 
     - name: Test
       run: go test -v main_test.go 
-      env:
-
+        
   build:
     needs: test
     runs-on: ${{ matrix.os }}
