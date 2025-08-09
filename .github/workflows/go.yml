@@ -42,8 +42,13 @@ jobs:
 
     - name: Test
       run: go test -v main_test.go 
-      
-  
+      env:
+        DB_USER: ${{ env.USER }}
+        DB_PASSWORD: ${{ env.PASSWORD }}
+        DB_NAME: ${{ env.DBNAME }}
+        DB_PORT: ${{ env.PORT }}
+        DB_HOST: ${{ env.HOST }}
+        
   build:
     needs: test
     runs-on: ${{ matrix.os }}
